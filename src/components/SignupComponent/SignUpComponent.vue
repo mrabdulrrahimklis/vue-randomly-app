@@ -3,7 +3,7 @@
     <v-row class="my-0 mx-16 pa-0" justify="center">
       <v-col sm="10" xl="6">
         <v-img
-          class="mx-auto"
+          class="mx-auto mt-5"
           height="48"
           width="48"
           :src="require('@/assets/images/Randomly.png')"

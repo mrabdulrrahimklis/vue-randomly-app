@@ -8,7 +8,7 @@
           width="48"
           :src="require('@/assets/images/Randomly.png')"
         />
-        <h1 class="text-center my-3">
+        <h1 class="text-center">
           Randomly
         </h1>
         <v-card class="login-card pa-8">
