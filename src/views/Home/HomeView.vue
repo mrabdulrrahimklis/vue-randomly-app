@@ -14,19 +14,10 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import NewsFeedView from "@/components/NewsFeed/NewsFeedView.vue";
-import { Action } from "vuex-class";
-import { LOGIN_EVENT } from "@/components/LoginComponent/store";
 import Header from "@/views/Home/Header.vue";
 
 @Component({
   components: { Header, NewsFeedView }
 })
-export default class HomeView extends Vue {
-  @Action("logout", { namespace: LOGIN_EVENT })
-  logout!: Function;
-
-  logoutFunction() {
-    this.logout();
-  }
-}
+export default class HomeView extends Vue {}
 </script>
