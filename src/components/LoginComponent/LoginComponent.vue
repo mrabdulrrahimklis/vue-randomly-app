@@ -34,10 +34,11 @@
           >
             <v-container class="px-8 py-3">
               <v-row>
-                <v-col cols="12" sm="12" md="12">
+                <v-col cols="12" sm="12" md="12" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Username or Email Address</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="username"
                       label="Email"
                       outlined
@@ -45,10 +46,11 @@
                     />
                   </label>
                 </v-col>
-                <v-col cols="12" sm="12" md="12">
+                <v-col cols="12" sm="12" md="12" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Password</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="password"
                       :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                       :type="showPassword ? 'text' : 'password'"

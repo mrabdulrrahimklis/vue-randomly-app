@@ -20,12 +20,13 @@
             @submit.prevent="signup"
             id="signup-form"
           >
-            <v-container class="px-8 py-3">
+            <v-container class="px-8 py-0 mt-0 bt-0">
               <v-row>
-                <v-col cols="12" sm="6" md="6">
+                <v-col cols="12" sm="6" md="6" class="my-0 py-0">
                   <label class="text-left">
                     <h3>First Name</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="firstName"
                       label="First Name"
                       outlined
@@ -33,10 +34,11 @@
                     />
                   </label>
                 </v-col>
-                <v-col cols="12" sm="6" md="6">
+                <v-col cols="12" sm="6" md="6" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Last Name</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="lastName"
                       label="Last Name"
                       outlined
@@ -44,10 +46,11 @@
                     />
                   </label>
                 </v-col>
-                <v-col cols="12" sm="12" md="12">
+                <v-col cols="12" sm="12" md="12" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Email</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="email"
                       label="Email"
                       outlined
@@ -55,10 +58,11 @@
                     />
                   </label>
                 </v-col>
-                <v-col cols="12" sm="12" md="12">
+                <v-col cols="12" sm="12" md="12" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Username</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="username"
                       label="Username"
                       outlined
@@ -66,10 +70,11 @@
                     />
                   </label>
                 </v-col>
-                <v-col cols="12" sm="12" md="12">
+                <v-col cols="12" sm="12" md="12" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Password</h3>
                     <v-text-field
+                      class="mt-0 bt-0"
                       v-model="password"
                       :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                       :type="showPassword ? 'text' : 'password'"
@@ -82,7 +87,7 @@
                     />
                   </label>
                 </v-col>
-                <v-col cols="12" sm="12" md="12">
+                <v-col cols="12" sm="12" md="12" class="my-0 py-0">
                   <label class="text-left">
                     <h3>Date of Birth</h3>
                     <v-menu
@@ -96,6 +101,7 @@
                     >
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
+                          class="mt-0 bt-0"
                           v-model="dateOfBirth"
                           label="Date of Birth"
                           outlined
@@ -124,7 +130,7 @@
                     v-if="!showSpinner"
                     type="submit"
                     form="signup-form"
-                    class="signUpBtn"
+                    class="signUpBtn ma-0 pa-0"
                   >
                     Get Started
                   </v-btn>
