@@ -23,7 +23,7 @@ export const actions: ActionTree<ILoginState, RootState> = {
         }
       })
       .catch(err => {
-        context.commit("auth", false );
+        context.commit("auth", false);
         context.commit("errorLog", err);
       });
   },
@@ -33,6 +33,7 @@ export const actions: ActionTree<ILoginState, RootState> = {
     axios
       .post(`${baseurl}logout/`)
       .then(() => {
+        context.commit("auth", false);
         router.push({ name: RouteName.Login });
       })
       .catch(err => {
