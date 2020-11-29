@@ -1,0 +1,166 @@
+// imports
+@import "variables";
+
+// flex
+.row-to-column {
+  flex-direction: column;
+}
+
+// text-colors
+.text-color-white {
+  color: $white !important;
+}
+
+.text-color-purple {
+  color: $purple !important;
+}
+
+.text-color-alert {
+  color: $red !important;
+}
+
+.text-color-gray {
+  color: $disabled !important;
+}
+
+.text-color-green {
+  color: $teal !important;
+}
+
+.text-color-black {
+  color: black !important;
+}
+
+// text-sizes
+.font-size-16 {
+  font-size: 16px !important;
+}
+
+.font-size-12 {
+  font-size: 12px !important;
+}
+
+// sizes
+.height-100vh {
+  height: 100vh;
+}
+
+// backgrounds
+.login-background {
+  background: $login_background;
+}
+
+.button-disabled {
+  background-color: $disabled !important;
+}
+
+.load-more-posts {
+  display: block !important;
+  margin: 30px auto;
+}
+
+// margins
+
+// paddings
+
+// font
+.font-weight-none {
+  font-weight: normal !important;
+}
+
+.link-decoration {
+  @extend .text-color-purple;
+  text-decoration: underline;
+  cursor: pointer !important;
+}
+
+// borders
+.border-circle {
+  border-radius: 999px !important;
+}
+
+.avatar-border {
+  border: 1px solid white;
+  -webkit-box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+// auth
+.login-card {
+  border-top: 4px solid #9f7aea !important;
+  border-radius: 4px !important;
+}
+
+.signUpBtn {
+  width: 100%;
+  background-color: $purple !important;
+  color: $white !important;
+  border-radius: 999px !important;
+  font-size: 16px !important;
+  text-transform: capitalize !important;
+  line-height: 14px !important;
+}
+
+// cursor
+.pointer {
+  cursor: pointer;
+}
+
+// buttons
+.influencer-button {
+  color: $white !important;
+  text-transform: capitalize !important;
+}
+
+.load-more-button {
+  @extend .influencer-button;
+  background-color: $purple !important;
+}
+
+.followingButton {
+  @extend .influencer-button;
+  border: 1px solid $purple;
+  background-color: $purple !important;
+  color: $white !important;
+}
+
+.followButton {
+  @extend .influencer-button;
+  border: 1px solid $purple;
+  background-color: $white !important;
+  color: $purple !important;
+}
+
+.next-button {
+  @extend .influencer-button;
+  background-color: $teal !important;
+}
+
+.home-button {
+  background-color: $button-gray;
+}
+
+.post-button {
+  background-color: $disabled !important;
+  color: $white !important;
+}
+
+.cancle-button {
+  background-color: $white !important;
+  border: 1px solid $disabled;
+  color: $disabled !important;
+  text-transform: capitalize !important;
+}
+
+.comment-button {
+  background-color: $disabled !important;
+  border: 1px solid $disabled;
+  color: $white !important;
+  text-transform: capitalize !important;
+}
+
+// inputs
+.post-text-field {
+  background-color: $input-gray;
+}

@@ -1,23 +1,40 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
+import { RouteName, RoutePath } from "@/router/types";
+import HomeView from "@/views/Home/HomeView.vue";
+import LoginView from "@/views/Login/LoginView.vue";
+import SignupView from "@/views/Signup/SignupView.vue";
+import SelectInfluencerView from "@/views/SelectInfluencers/SelectInfluencerView.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: RoutePath.HomeView,
+    name: RouteName.HomeView,
+    component: HomeView,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("token") !== "") {
+        next();
+      } else {
+        next({ name: RouteName.Login });
+      }
+    }
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: RoutePath.Login,
+    name: RouteName.Login,
+    component: LoginView
+  },
+  {
+    path: RoutePath.Signup,
+    name: RouteName.Signup,
+    component: SignupView
+  },
+  {
+    path: RoutePath.SelectInfluencerView,
+    name: RouteName.SelectInfluencerView,
+    component: SelectInfluencerView
   }
 ];
 
