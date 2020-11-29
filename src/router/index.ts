@@ -22,23 +22,6 @@ const isLoggedIn = (to: Route, from: Route, next: NavigationGuardNext<Vue>) => {
   }
 };
 
-const redirectToHome = (
-  to: Route,
-  from: Route,
-  next: NavigationGuardNext<Vue>
-) => {
-  let isAuthed = false;
-
-  if (localStorage.getItem("token")) isAuthed = true;
-  else isAuthed = false;
-
-  if (isAuthed) {
-    next();
-  } else {
-    next({ name: RouteName.HomeView });
-  }
-};
-
 const routes: Array<RouteConfig> = [
   {
     path: RoutePath.HomeView,
@@ -68,7 +51,6 @@ const routes: Array<RouteConfig> = [
     path: RoutePath.NotFound,
     name: RouteName.NotFound,
     component: NotFoundView,
-    beforeEnter: (to, from, next) => redirectToHome(to, from, next)
   }
 ];
 
