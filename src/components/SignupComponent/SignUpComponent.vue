@@ -1,18 +1,18 @@
 <template>
   <v-container>
-    <v-row class="my-0 ma-16 pa-0" justify="center">
+    <v-row class="my-0 mx-16 pa-0" justify="center">
       <v-col sm="10" xl="6">
         <v-img
-          class="mx-auto mt-5"
+          class="mx-auto"
           height="48"
           width="48"
           :src="require('@/assets/images/Randomly.png')"
         />
-        <h1 class="text-center my-3">
+        <h1 class="text-center">
           Randomly
         </h1>
         <v-card class="login-card pa-8">
-          <h1 class="text-center font-weight-none mb-2 mt-1">
+          <h1 class="text-center font-weight-none">
             Create an account
           </h1>
           <v-form
