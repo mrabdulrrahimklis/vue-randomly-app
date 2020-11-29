@@ -7,6 +7,7 @@ import { mutations } from "@/components/LoginComponent/store/mutations";
 
 export const state: ILoginState = {
   loginState: null,
+  auth: false,
   errorLog: ""
 };
 

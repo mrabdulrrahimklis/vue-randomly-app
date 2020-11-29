@@ -6,8 +6,8 @@ export enum RouteName {
 }
 
 export enum RoutePath {
-  Login = "/login",
-  HomeView = "/",
+  Login = "/",
+  HomeView = "/home",
   SelectInfluencerView = "/influencer",
   Signup = "/signup"
 }

@@ -11,8 +11,11 @@ export const actions: ActionTree<ILoginState, RootState> = {
     axios
       .post(`${baseurl}auth/login/`, loginObject)
       .then((response: AxiosResponse) => {
-        context.commit("setLoginState", response.data);
         localStorage.setItem("token", JSON.stringify(response.data.token));
+
+        context.commit("setLoginState", response.data);
+        context.commit("auth", true);
+
         if (response.data.user.hasSelectedInfluencers) {
           router.push({ name: RouteName.HomeView });
         } else {
@@ -20,6 +23,7 @@ export const actions: ActionTree<ILoginState, RootState> = {
         }
       })
       .catch(err => {
+        context.commit("auth", false );
         context.commit("errorLog", err);
       });
   },

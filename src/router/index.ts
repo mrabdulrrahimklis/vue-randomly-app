@@ -5,6 +5,7 @@ import HomeView from "@/views/Home/HomeView.vue";
 import LoginView from "@/views/Login/LoginView.vue";
 import SignupView from "@/views/Signup/SignupView.vue";
 import SelectInfluencerView from "@/views/SelectInfluencers/SelectInfluencerView.vue";
+import store from './../store'
 
 Vue.use(VueRouter);
 
@@ -13,13 +14,6 @@ const routes: Array<RouteConfig> = [
     path: RoutePath.HomeView,
     name: RouteName.HomeView,
     component: HomeView,
-    beforeEnter: (to, from, next) => {
-      if (localStorage.getItem("token") !== "") {
-        next();
-      } else {
-        next({ name: RouteName.Login });
-      }
-    }
   },
   {
     path: RoutePath.Login,
