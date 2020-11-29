@@ -62,6 +62,11 @@
                   </label>
                 </v-col>
                 <v-col cols="12" sm="12" md="12">
+                  <v-row justify="center">
+                    <h4 v-if="!getAuth" class="text-center text-color-alert">
+                      Wrong credentials! Please check it one more time.
+                    </h4>
+                  </v-row>
                   <v-btn type="submit" form="signup-form" class="signUpBtn">
                     Sign in
                   </v-btn>
@@ -69,11 +74,6 @@
               </v-row>
             </v-container>
           </v-form>
-          <v-row justify="center">
-            <h4 v-if="isSignUpFromValid" class="text-center text-color-alert">
-              Wrong credentials! Please check it one more time.
-            </h4>
-          </v-row>
           <v-divider />
           <v-row justify="center" class="font-weight-none">
             <h3 class="mt-5">
@@ -104,6 +104,8 @@ export default class LoginComponent extends Vue {
   getLoggedUser!: ILoginObject;
   @Getter("errorLog", { namespace: LOGIN_EVENT })
   errorLog!: ILoginObject;
+  @Getter("getAuth", { namespace: LOGIN_EVENT })
+  getAuth!: ILoginObject;
 
   data() {
     return {

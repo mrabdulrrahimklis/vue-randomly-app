@@ -1,6 +1,6 @@
 export interface ILoginState {
   loginState: ILoginObject | null;
-  auth: boolean;
+  auth: boolean | null;
   errorLog: string;
 }
 
