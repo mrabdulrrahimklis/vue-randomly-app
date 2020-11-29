@@ -65,7 +65,7 @@
                 </v-col>
                 <v-col cols="12" sm="12" md="12">
                   <v-row justify="center">
-                    <h4 v-if="!getAuth" class="text-center text-color-alert">
+                    <h4 v-if="!getAuth != false" class="text-center text-color-alert">
                       Wrong credentials! Please check it one more time.
                     </h4>
                   </v-row>
@@ -102,6 +102,8 @@ import { ILoginObject } from "@/components/LoginComponent/types";
 export default class LoginComponent extends Vue {
   @Action("login", { namespace: LOGIN_EVENT })
   login!: Function;
+  @Action("authAction", { namespace: LOGIN_EVENT })
+  authAction!: Function;
   @Getter("getLoggedUser", { namespace: LOGIN_EVENT })
   getLoggedUser!: ILoginObject;
   @Getter("errorLog", { namespace: LOGIN_EVENT })
@@ -127,6 +129,10 @@ export default class LoginComponent extends Vue {
         }
       }
     };
+  }
+
+  mounted() {
+    this.authAction(true);
   }
 
   checkForm() {

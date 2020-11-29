@@ -39,5 +39,8 @@ export const actions: ActionTree<ILoginState, RootState> = {
       .catch(err => {
         context.commit("errorLog", err);
       });
+  },
+  authAction(context, auth) {
+    context.commit("auth", auth);
   }
 };
