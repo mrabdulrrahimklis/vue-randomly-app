@@ -1,6 +1,6 @@
 # randomly
 ```
-klis-symphony.surge.sh
+https://symphony-klis.surge.sh/
 ```
 ## Project setup
 ```
