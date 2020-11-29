@@ -1,36 +1,32 @@
 <template>
   <div>
     <v-card>
-      <v-row>
-        <v-col cols="2">
-          <v-avatar class="avatar-border mt-1 pa-0 ml-8">
+      <v-container class="ma-0 pb-0">
+        <v-row class="px-2">
+          <v-avatar class="avatar-border mt-2 mb-2 pa-0">
             <v-img
               src="https://cdn.vuetifyjs.com/images/john.jpg"
               alt="John"
-              class="ma-0 pa-0"
+              class="ml-0 pa-0"
             />
           </v-avatar>
-        </v-col>
-        <v-col cols="8" class="ma-0 mt-4 pa-0">
           <v-text-field
             v-model="textData"
             label="What's going on?"
             append-icon="mdi-image"
-            class="font-size-16"
+            class="font-size-16 mt-2 mb-2 mx-2"
             background-color="#edf2f7"
             solo
           />
-        </v-col>
-        <v-col cols="2">
           <v-btn
             @click="() => this.createNewPost()"
-            class="mr-2 mt-1 border-circle post-button"
+            class="mt-2 mb-2 border-circle post-button"
             height="48"
           >
             Post
           </v-btn>
-        </v-col>
-      </v-row>
+        </v-row>
+      </v-container>
     </v-card>
     <v-card class="mt-5">
       <h2 class="text-center pa-2">Home</h2>

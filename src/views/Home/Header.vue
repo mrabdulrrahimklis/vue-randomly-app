@@ -43,6 +43,7 @@ export default class Header extends Vue {
   logout!: Function;
 
   logoutFunction() {
+    localStorage.setItem("token", "");
     this.logout();
   }
 }
