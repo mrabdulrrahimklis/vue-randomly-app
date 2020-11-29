@@ -2,12 +2,14 @@ export enum RouteName {
   Login = "Login",
   HomeView = "HomeView",
   SelectInfluencerView = "SelectInfluencerView",
-  Signup = "Signup"
+  Signup = "Signup",
+  NotFound = "NotFound"
 }
 
 export enum RoutePath {
   Login = "/",
   HomeView = "/home",
   SelectInfluencerView = "/influencer",
-  Signup = "/signup"
+  Signup = "/signup",
+  NotFound = "*"
 }

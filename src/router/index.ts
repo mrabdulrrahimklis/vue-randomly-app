@@ -5,6 +5,7 @@ import HomeView from "@/views/Home/HomeView.vue";
 import LoginView from "@/views/Login/LoginView.vue";
 import SignupView from "@/views/Signup/SignupView.vue";
 import SelectInfluencerView from "@/views/SelectInfluencers/SelectInfluencerView.vue";
+import NotFoundView from "@/views/NotFound/NotFoundView.vue";
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,23 @@ const isLoggedIn = (to: Route, from: Route, next: NavigationGuardNext<Vue>) => {
     next();
   } else {
     next({ name: RouteName.Login });
+  }
+};
+
+const redirectToHome = (
+  to: Route,
+  from: Route,
+  next: NavigationGuardNext<Vue>
+) => {
+  let isAuthed = false;
+
+  if (localStorage.getItem("token")) isAuthed = true;
+  else isAuthed = false;
+
+  if (isAuthed) {
+    next();
+  } else {
+    next({ name: RouteName.HomeView });
   }
 };
 
@@ -45,6 +63,12 @@ const routes: Array<RouteConfig> = [
     component: SelectInfluencerView,
     beforeEnter: (to: Route, from: Route, next: NavigationGuardNext<Vue>) =>
       isLoggedIn(to, from, next)
+  },
+  {
+    path: RoutePath.NotFound,
+    name: RouteName.NotFound,
+    component: NotFoundView,
+    beforeEnter: (to, from, next) => redirectToHome(to, from, next)
   }
 ];
 
